@@ -79,31 +79,6 @@ router.post('/post/json', function (req, res) {
 });
 
 
-router.post('/post/json', function (req, res) {
-
-    function appendJSON(obj) {
-
-        console.log(obj)
-
-        xmlFileToJs('carproducts.xml', function (err, result) {
-            if (err) throw (err);
-            
-    
-         result.feeds.section[obj.feb_id].resp.push({'fname': obj.fname,'email': obj.email, 'phone': obj.phone, 'message': obj.message });
-
-            console.log(JSON.stringify(result, null, "  "));
-
-            jsToXmlFile('carproducts.xml', result, function(err){
-                if (err) console.log(err);
-            });
-        });
-    };
-
-    appendJSON(req.body);
-
-    res.redirect('back');
-
-});
 
 
 
