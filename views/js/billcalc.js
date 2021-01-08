@@ -1,33 +1,33 @@
-// returns a number that represents the sum of all the selected menu
-// item prices.
+
+// calcuting the price by getting the user selected row and adding all together.
+
 function calculateprice(idproductTable) {
     var fpriceTotal = 0.0;
     var i = 0;
-    var aCBTags = document.querySelectorAll('input');
-    for (i = 0; i < aCBTags.length; i++) {
-        // is this menu item selected? it is if the checkbox is checked
-        if (aCBTags[i].checked) {
-            // get the checkbox' parent table row
-            var oTR = getselectrow(aCBTags[i], 'TR');
-            // retrieve the price from the price column, which is the third column in the table
-            var oTDPrice = oTR.getElementsByTagName('TD')[3];
-            // the first child text node of the column contains the price
-            fpriceTotal += parseFloat(oTDPrice.firstChild.data);
+    var tag = document.querySelectorAll('input');
+    for (i = 0; i < tag.length; i++) {
+
+        if (tag[i].checked) {
+     
+            var trselect = getselectrow(tag[i], 'TR');
+     
+            var priceselect = trselect.getElementsByTagName('TD')[3];
+
+            fpriceTotal += parseFloat(priceselect.firstChild.data);
         };
     };
-    // return the price as a decimal number with 2 decimal places
+
     return Math.round(fpriceTotal * 100.0) / 100.0;
 };
 
 
-// Utility function for getting the parent tag of a given tag
-// but only of a certain type (i.e. a TR, a TABLE, etc.)
+
 function getselectrow(oNode, sParentType) {
-    var oParent = oNode.parentNode;
-    while (oParent) {
-        if (oParent.nodeName == sParentType)
-            return oParent;
-        oParent = oParent.parentNode;
+    var parrentvar = oNode.parentNode;
+    while (parrentvar) {
+        if (parrentvar.nodeName == sParentType)
+            return parrentvar;
+        parrentvar = parrentvar.parentNode;
     };
-    return oParent;
+    return parrentvar;
 };
