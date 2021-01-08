@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<partsmenu>
+  <section name="BMW">
+    <entree>
+      <model> 5 Series </model>
+      <part>Head Lamp</part>
+      <price>4.95</price>
+    </entree>
+    <entree>
+      <model> 5 Series </model>
+      <part>Bumber</part>
+      <price>7.50</price>
+    </entree>
+    <entree>
+      <model> 5 Series </model>
+      <part>Break Light</part>
+      <price>8.50</price>
+    </entree>
+    <entree>
+      <model>6 Series</model>
+      <part>Seat Cover</part>
+      <price>25</price>
+    </entree>
+    <entree>
+      <model>6 Series</model>
+      <part>Seat Cover</part>
+      <price>25</price>
+    </entree>
+    <entree>
+      <model/>
+      <part/>
+      <price/>
+    </entree>
+  </section>
+  <section name="Audi">
+    <entree>
+      <model> Q7 </model>
+      <part>Break Light</part>
+      <price>4.99</price>
+    </entree>
+    <entree>
+      <model> Q7 </model>
+      <part>Bumber</part>
+      <price>8.29</price>
+    </entree>
+    <entree>
+      <model> Q7 </model>
+      <part>Gear Box</part>
+      <price>6.99</price>
+    </entree>
+    <entree>
+      <model> Q7 </model>
+      <part>Brakes</part>
+      <price>5.25</price>
+    </entree>
+    <entree>
+      <model> Q7 </model>
+      <part>Tyres</part>
+      <price>3.99</price>
+    </entree>
+    <entree>
+      <model>R8</model>
+      <part>Wiper</part>
+      <price>25</price>
+    </entree>
+  </section>
+  <section name="Benz">
+    <entree>
+      <model> C Class </model>
+      <part>Windows</part>
+      <price>7.99</price>
+    </entree>
+    <entree>
+      <model> C Class </model>
+      <part>Seat Cover</part>
+      <price>6.99</price>
+    </entree>
+    <entree>
+      <model> C Class </model>
+      <part>Lcd Screen</part>
+      <price>7.39</price>
+    </entree>
+  </section>
+  <section name="Lamborghini">
+    <entree>
+      <model> urus </model>
+      <part>Gear Box</part>
+      <price>19.99</price>
+    </entree>
+    <entree>
+      <model> urus </model>
+      <part>Tyres</part>
+      <price>12.99</price>
+    </entree>
+    <entree>
+      <model> urus </model>
+      <part> Car Seat </part>
+      <price>7.79</price>
+    </entree>
+  </section>
+</partsmenu>

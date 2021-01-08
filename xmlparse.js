@@ -1,4 +1,3 @@
-
 var http = require('http'), //This module provides the HTTP server functionalities
     path = require('path'), //The path module provides utilities for working with file and directory paths
     express = require('express'), //This module allows this app to respond to HTTP Requests, defines the routing and renders back the required content
@@ -42,8 +41,8 @@ router.get('/get/html', function(req, res) {
 
     res.writeHead(200, {'Content-Type': 'text/html'}); //We are responding to the client that the content served back is HTML and the it exists (code 200)
 
-    var xml = fs.readFileSync('PaddysCafe.xml', 'utf8'); //We are reading in the XML file
-    var xsl = fs.readFileSync('PaddysCafe.xsl', 'utf8'); //We are reading in the XSL file
+    var xml = fs.readFileSync('carproducts.xml', 'utf8'); //We are reading in the XML file
+    var xsl = fs.readFileSync('carproducts.xsl', 'utf8'); //We are reading in the XSL file
 
     var doc = xmlParse(xml); //Parsing our XML file
     var stylesheet = xmlParse(xsl); //Parsing our XSL file
@@ -60,14 +59,14 @@ router.post('/post/json', function (req, res) {
 
         console.log(obj)
 
-        xmlFileToJs('PaddysCafe.xml', function (err, result) {
+        xmlFileToJs('carproducts.xml', function (err, result) {
             if (err) throw (err);
             
-            result.cafemenu.section[obj.sec_n].entree.push({'item': obj.item, 'price': obj.price});
+            result.partsmenu.section[obj.sec_n].entree.push({'model': obj.model,'part': obj.part, 'price': obj.price});
 
             console.log(JSON.stringify(result, null, "  "));
 
-            jsToXmlFile('PaddysCafe.xml', result, function(err){
+            jsToXmlFile('carproducts.xml', result, function(err){
                 if (err) console.log(err);
             });
         });
@@ -79,7 +78,38 @@ router.post('/post/json', function (req, res) {
 
 });
 
-server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
+
+router.post('/post/json', function (req, res) {
+
+    function appendJSON(obj) {
+
+        console.log(obj)
+
+        xmlFileToJs('carproducts.xml', function (err, result) {
+            if (err) throw (err);
+            
+    
+         result.feeds.section[obj.feb_id].resp.push({'fname': obj.fname,'email': obj.email, 'phone': obj.phone, 'message': obj.message });
+
+            console.log(JSON.stringify(result, null, "  "));
+
+            jsToXmlFile('carproducts.xml', result, function(err){
+                if (err) console.log(err);
+            });
+        });
+    };
+
+    appendJSON(req.body);
+
+    res.redirect('back');
+
+});
+
+
+
+
+
+server.listen(process.env.PORT || 7000, process.env.IP || "0.0.0.0", function () {
     var addr = server.address();
     console.log("Server listnening at", addr.address + ":" + addr.port);
 });
