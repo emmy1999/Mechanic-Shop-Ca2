@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 const partRouter = require('./routes/carparts')
 
 app.set('view engine', 'ejs')
+
 app.use(express.urlencoded({ extended: false}))
 
 
