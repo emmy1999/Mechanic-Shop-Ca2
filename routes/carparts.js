@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 router.get('/new', (req, res) => {
-res.render('carparts/new_part')
+res.render('carpart/new_part')
 
 
 })
@@ -28,7 +28,7 @@ part = await part.save();
 res.redirect(`/carparts/${part.id}`)
 } catch (e) {
     console.log(e)
-res.render('carparts/new_part', {part : part})
+res.render('carpart/new_part', {part : part})
 }
 
 })

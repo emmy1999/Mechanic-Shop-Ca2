@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false}))
 app.get('/', async  (req,res)=> {
    const parts = await Part.find();
 
-    res.render('carparts/index' , {parts: parts})
+    res.render('carpart/index' , {parts: parts})
 })
 
 
