@@ -18,7 +18,7 @@ router.get('/edit/:id', async (req, res) => {
 router.get('/:slug', async (req, res) => {
   const part = await Part.findOne({ slug: req.params.slug })
   if (part == null) res.redirect('/')
-  res.render('carpart/show', { part: part })
+ // res.render('carpart/show', { part: part })
 })
 
 router.post('/', async (req, res, next) => {
