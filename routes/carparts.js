@@ -15,10 +15,10 @@ router.get('/edit/:id', async (req, res) => {
 
 
 
-router.get('/:slug', async (req, res) => {
-  const part = await Part.findOne({ slug: req.params.slug })
+router.get('/:id', async (req, res) => {
+  const part = await Part.findById()
   if (part == null) res.redirect('/')
- // res.render('carpart/show', { part: part })
+
 })
 
 router.post('/', async (req, res, next) => {
@@ -53,7 +53,7 @@ function savePartAndRedirect(path) {
      part.Price = req.body.Price
     try {
       part = await part.save()
-      res.redirect(`/carparts/${part.slug}/#products`)
+      res.redirect(`/carparts/${part.id}/#products`)
     } catch (e) {
       res.render(`carparts/${path}`, { part: part })
 

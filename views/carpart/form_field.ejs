@@ -1,19 +1,20 @@
+
 <div class="form-group">
   <label for="Manufacturer">Manufacturer</label>
-  <input  required value="<%= part.Manufacturer %>" type="text" name="Manufacturer" id="Manufacturer" class="form-control">
+  <input  required value="<%= part.Manufacturer %>" type="text" pattern="[A-Za-z]{25}" name="Manufacturer" id="Manufacturer" class="form-control">
 </div>
 <div class="form-group">
   <label for="Model">Model</label>
-  <input  required value="<%= part.Model %>" type="text" name="Model" id="Model" class="form-control">
+  <input  required value="<%= part.Model %>" type="text" pattern="[A-Za-z]{20}" name="Model" id="Model" class="form-control">
 </div>
 <div class="form-group">
   <label for="Part">Part Name </label>
-  <input  required value="<%= part.Part %>" type="text" name="Part" id="Part" class="form-control">
+  <input  required value="<%= part.Part %>" type="text" pattern="[A-Za-z]{15}" name="Part" id="Part" class="form-control">
 </div>
 
 <div class="form-group">
   <label for="Price">Price</label>
-  <input  required value="<%= part.Price %>" type="text" name="Price" id="Price" class="form-control">
+  <input  required value="<%= part.Price %>" type="number" step="0.01" name="Price" id="Price" class="form-control">
 </div>
 
 
