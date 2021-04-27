@@ -1,165 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-
-
-
-  
-
-    
-
-
-    <title> The Mechanic Shop</title>
-    <meta name="description" content="We provide high qulity parts for your cars.">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Car shop </title>
 
 </head>
-
 <body>
 
-    <!-- Navigator bar for the website.-->
- <body id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top" style="color: rgb(214,115,44);">The Mechanic Shop</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(214,115,44);"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#products">PRODUCTS</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">feedback</a></li>
-                </ul>
-            </div>
+ <h2> This is a demo page.    </h2>  
+
+
+ <div class="container">
+    <h1 class="mb-4">All Car Parts</h1>
+    <a href="/carparts/new" class="btn btn-success">New Parts</a>
+
+    <% parts.forEach(part => { %>
+      <div class="card mt-4">
+          <div class="card-body">
+          <h4 class="card-title">  <%= part.Manufacturer %> </h4>
+
+  <div class="card-subtitle text-muted mb-2"> <h5>Model:   <%= part.Model %> </h5>    </div>
+
+      
+       <div class="card-subtitle text-muted mb-2">  <h5>Part Name:   <%= part.Part %> </h5> </div>
+
+
+       <div class="card-subtitle text-muted mb-2"><h5>Price:  <%= part.Price %>  </h5></div>
+
+
+          </div>
         </div>
-    </nav>
+       
 
-     <header class="masthead" style="background-image:url('assets/img/header-bg.jpg');">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in"><span>Welcome To The Hardware Shop!</span></div>
-                <div class="intro-heading text-uppercase"><span>thanks for your visit.</span></div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services" style="background-color: rgb(217,122,38);">Tell me more</a></div>
-        </div>
-    </header>
-<section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">Services</h2>
-                    <h3 class="text-muted section-subheading"></h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">E-Commerce</h4>
-                    <p class="text-muted">We sell high quality products. At the best and affordable price. </p>
-                </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-home fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">Free Home Delivery</h4>
-                    <p class="text-muted"> We offer free Home Delivery for all products ordered throught the website.  </p>
-                </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fas fa-store fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">Collect From Store</h4>
-                    <p class="text-muted"> You can also collect your order from store. Your order would be avaliable after an hour of placing the order.        </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
- 
- 
-    <!-- priting the result from the xsl transformation -->
-
-    <section id="products" class="bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                 <h2 class="text-uppercase section-heading"> Products  </h2>
-                <p class="lead">Select a product from the below Options.</p>
-            </div>
-         
-        </div>
-    </div>
-
-
-</section>
-
-    <section id="contact" style="background-image:url('assets/img/map-image.png');">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">feedback</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form enctype="application/json" action="/post/json" method="post" >
-                        <div class="form-row">
-                            <div class="col col-md-6">
-                       
-                                <div class="form-group"><input class="form-control" type="text" name="fname" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
-                                <div class="form-group"><input class="form-control" type="tel" name="phone" placeholder="Your Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group"><textarea class="form-control" name="message" placeholder="Your Message *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
-                            </div>
-                            <div class="col">
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit" style="background-color: rgb(214,115,44);">Send Message</button></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-       <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© The Mechanic Shop 2020</span></div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"></li>
-                        <li class="list-inline-item"></li>
-                        <li class="list-inline-item"></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/js/agency.js"></script>
-    
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-
-
+  
+    <% }) %>
+  </div>
 </body>
-                  
 </html>

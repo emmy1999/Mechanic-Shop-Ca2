@@ -8,11 +8,13 @@ app.use(bodyParser.json());
 
 // Routes Declare
 const partRouter = require('./routes/carparts')
+const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({ extended: false}))
-
+app.use(methodOverride('_method'))
+app.use(express.static('views/carpart'))
 
 
 //Render html file

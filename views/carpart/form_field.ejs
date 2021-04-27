@@ -1,23 +1,23 @@
 <div class="form-group">
   <label for="maf">Manufacturer</label>
-  <input required type="text" type="text" name="maf" id="maf" class="form-control">
+  <input  required value="<%= part.Manufacturer %>" type="text" name="Manufacturer" id="Manufacturer" class="form-control">
 </div>
 <div class="form-group">
-  <label for="model">Model</label>
-  <textarea name="model" id="model" class="form-control">
-      
+  <label for="Model">Model</label>
+  <textarea name="Model" id="Model" class="form-control">
+      <%= part.Model %> 
   </textarea>
 </div>
 <div class="form-group">
-  <label for="partname">Part Name</label>
-  <textarea name="partname" id="partname" class="form-control">
-
+  <label for="Part">Part Name</label>
+  <textarea name="Part" id="Part" class="form-control">
+ <%= part.Part %>
   </textarea>
 </div>
 <div class="form-group">
-  <label for="price">Price</label>
-  <textarea required="number" name="price" id="price" class="form-control">
-
+  <label for="Price">Price</label>
+  <textarea required="number" name="Price" id="Price" class="form-control">
+<%= part.Price %>
   </textarea>
 </div>
 

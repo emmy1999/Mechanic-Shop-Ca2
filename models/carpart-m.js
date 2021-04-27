@@ -29,7 +29,24 @@ required: true
 }
 
 
+
 })
+
+
+
+partSchema.pre('validate', function(next) {
+  if (this.Manufacturer) {
+    this.slug = slugify(this.Manufacturer, { lower: true, strict: true })
+  }
+
+  if (this.Model) {
+    this.sanitizedHtml = dompurify.sanitize(marked(this.Model))
+  }
+
+  next()
+})
+
+
 
 
 module.exports = mongoose.model('carparts', partSchema) // passing the model to the collection
