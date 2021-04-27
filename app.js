@@ -4,6 +4,11 @@ const mongoose = require('mongoose')
 const Part = require('./models/carpart-m')
 const bodyParser = require('body-parser');
 require('dotenv').config()
+
+
+var port = process.env.PORT || 5000;
+
+
 app.use(bodyParser.json());
 
 // Routes Declare
@@ -36,4 +41,8 @@ dbc.on('error', (error) => console.error(error))
 
 app.use('/carparts', partRouter)
 
-app.listen(5000, () => console.log('Server Started'))
+//app.listen(5000, () => console.log('Server Started'))
+
+app.listen(port, function(err){
+    console.log('Listening on port: ' + port);
+});

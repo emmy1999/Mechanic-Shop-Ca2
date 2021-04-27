@@ -29,7 +29,8 @@ router.post('/', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
   req.part = await Part.findById(req.params.id)
-  //next()
+  next()
+     //res.redirect('/')
 }, savePartAndRedirect('edit'))
 
 
