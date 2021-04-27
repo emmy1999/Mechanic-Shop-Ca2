@@ -24,20 +24,21 @@ router.get('/:slug', async (req, res) => {
 router.post('/', async (req, res, next) => {
   req.part = new Part()
   next()
+
 }, savePartAndRedirect('new'))
 
 
 router.put('/:id', async (req, res, next) => {
   req.part = await Part.findById(req.params.id)
   next()
-     //res.redirect('/')
+
 }, savePartAndRedirect('edit'))
 
 
 
 router.delete('/:id', async (req, res)=> {
     await Part.findByIdAndDelete(req.params.id)
-    res.redirect('/')
+  res.redirect('/#products')
 
 
 })
@@ -52,9 +53,10 @@ function savePartAndRedirect(path) {
      part.Price = req.body.Price
     try {
       part = await part.save()
-      res.redirect(`/carparts/${part.slug}`)
+      res.redirect(`/carparts/${part.slug}/#products`)
     } catch (e) {
       res.render(`carparts/${path}`, { part: part })
+
     }
   }
 }
