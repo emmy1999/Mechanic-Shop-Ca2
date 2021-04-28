@@ -79,7 +79,11 @@
     
  
  
-    <!-- priting the result from the xsl transformation -->
+    <!-- priting the database collection documents in a html form. For each function is used to achieve this. 
+    Each and every document into the table one by one until all documents are shown. 
+And each and every document value is print out seperately.
+-->
+
 
     <section id="products" class="bg-light">
     <div class="container">
@@ -101,11 +105,14 @@
                             <th>Model</th>
                             <th>Part Name</th>
                             <th>Price</th>
-                          <%#  <th>Last Updated</th> %>
+                          
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!--  this are the data to be displayed from the database. Each and every document is caputred using a get request to the 
+                        
+                        database collection. And get request is passed into a schema and each value recieved is displayed one by one into the table on the appropriate column. -->
                         <% parts.forEach(part => { %>
                         <tr>
                             
@@ -113,7 +120,7 @@
                             <td> <%= part.Model %> </td>
                             <td>  <%= part.Part %>  </td>
                             <td> <%= part.Price %> </td>
-                             <%#  <td></td>%>
+                
                             <td>
                                   <a href="/carparts/edit/<%= part.id %>"  >
                                 <button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-pencil" style="font-size: 15px;">
