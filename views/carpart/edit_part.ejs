@@ -11,7 +11,7 @@
   <div class="container">
    <h3 >  Edit Part   </h3>
 
-    <form action="/carparts" method="POST">
+    <form action="/carparts/<%= part.id %>?_method=PUT" method="POST">
   <%- include('form_field') %>
     </form>
   </div>
