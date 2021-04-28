@@ -63,7 +63,7 @@ function savePartAndRedirect(path) {
      res.redirect(`/#products`)
     } catch (e) {
  
- return res.status(400).json({message: 'Something went wrong'})
+ return res.status(400).json({message: 'Validation fail for the request'})
     }
   }
 }
