@@ -36,6 +36,8 @@ router.put('/:id', async (req, res, next) => {
 
 
 
+
+
 router.delete('/:id', async (req, res)=> {
     await Part.findByIdAndDelete(req.params.id)
   res.redirect('/#products')
@@ -53,9 +55,10 @@ function savePartAndRedirect(path) {
      part.Price = req.body.Price
     try {
       part = await part.save()
-      res.redirect(`/carparts/${part.id}/#products`)
+
+     res.redirect(`/#products`)
     } catch (e) {
-      res.render(`carparts/${path}`, { part: part })
+ 
 
     }
   }

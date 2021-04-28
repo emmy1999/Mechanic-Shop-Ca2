@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const Part = require('./models/carpart-m')
 const bodyParser = require('body-parser');
-require('dotenv').config()
+//require('dotenv').config()
 
 
 var port = process.env.PORT || 5000;
