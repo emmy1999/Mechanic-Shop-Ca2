@@ -104,7 +104,7 @@ And each and every document value is print out seperately.
                             <th>Manufacturer</th>
                             <th>Model</th>
                             <th>Part Name</th>
-                            <th>Price</th>
+                            <th>Price €</th>
                           
                             <th>Action</th>
                         </tr>
@@ -122,10 +122,15 @@ And each and every document value is print out seperately.
                             <td> <%= part.Price %> </td>
                 
                             <td>
+                               <!--   this is button to edit a purticular record using id. When click take you to edit form page which populate all the data 
+                            associated with the id. And we have to change only what we want to -->
                                   <a href="/carparts/edit/<%= part.id %>"  >
                                 <button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-pencil" style="font-size: 15px;">
                                 </i></button>
                             </a>
+
+                                <!--   this is button to delete a purticular record using id which is linked to my api which sent a delete request.
+                                Which sents the data to backend via post. -->
                                 <form action="/carparts/<%= part.id %>?_method=DELETE" method="POST" class="d-inline"  >
                                 <button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;">
                                 </i></button>
