@@ -13,16 +13,17 @@ app.use(bodyParser.json()); // Parsing the data in body to json data
 
 // Routes Declare
 const partRouter = require('./routes/carparts') // routes for api
-const methodOverride = require('method-override')
+const methodOverride = require('method-override')// package used to update and delete a document via post request.
 
 app.set('view engine', 'ejs')  // pulling up my static webpage
 
-app.use(express.urlencoded({ extended: false}))
-app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: false})) // this is a middlewear function which comes with the express package.
+// it enable us to use URL-encoded data with the querystring library.
+app.use(methodOverride('_method'))// using the method in the app. 
 app.use(express.static('views/carpart')) // making my folder public to access my css and javascript for my html page.
 
 
-//Render html file
+//Render html file homepage
 app.get('/', async  (req,res)=> {// making a get request
    const parts = await Part.find();  // this will find all my data from my database collection with the help of model and assign it on to the const parts
 
