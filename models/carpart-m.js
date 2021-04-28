@@ -1,9 +1,5 @@
 const mongoose = require('mongoose')
-const marked = require('marked')
-const slugify = require('slugify')
-const createDomPurify = require('dompurify')
-const { JSDOM } = require('jsdom')
-const dompurify = createDomPurify(new JSDOM().window)
+
 
 const partSchema = new mongoose.Schema({
 
@@ -32,19 +28,6 @@ required: true
 
 })
 
-
-
-partSchema.pre('validate', function(next) {
-  if (this.Manufacturer) {
-    this.slug = slugify(this.Manufacturer, { lower: true, strict: true })
-  }
-
-  if (this.Model) {
-    this.sanitizedHtml = dompurify.sanitize(marked(this.Model))
-  }
-
-  next()
-})
 
 
 
