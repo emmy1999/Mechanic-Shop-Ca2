@@ -17,8 +17,12 @@ router.get('/edit/:id', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const part = await Part.findById()
-  if (part == null) res.redirect('/')
 
+  if (part == null) {
+ return res.status(404).json({message: 'Cannot find Car Parts by id'})
+  } 
+  res.redirect('/')
+   
 })
 
 router.post('/', async (req, res, next) => {
@@ -59,7 +63,7 @@ function savePartAndRedirect(path) {
      res.redirect(`/#products`)
     } catch (e) {
  
-
+ return res.status(400).json({message: 'Something went wrong'})
     }
   }
 }
