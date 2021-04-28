@@ -6,43 +6,46 @@ const bodyParser = require('body-parser');
 //require('dotenv').config()
 
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 5000;  // Declaring to ports to support heroku
 
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // Parsing the data in body to json data
 
 // Routes Declare
-const partRouter = require('./routes/carparts')
+const partRouter = require('./routes/carparts') // routes for api
 const methodOverride = require('method-override')
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs')  // pulling up my static webpage
 
 app.use(express.urlencoded({ extended: false}))
 app.use(methodOverride('_method'))
-app.use(express.static('views/carpart'))
+app.use(express.static('views/carpart')) // making my folder public to access my css and javascript for my html page.
 
 
 //Render html file
-app.get('/', async  (req,res)=> {
-   const parts = await Part.find();
+app.get('/', async  (req,res)=> {// making a get request
+   const parts = await Part.find();  // this will find all my data from my database collection with the help of model and assign it on to the const parts
 
-    res.render('carpart/index' , {parts: parts})
-})
+    res.render('carpart/index' , {parts: parts})// This will render all the database collection data which was assigned on to the const parts
+})                                           // to my static webpage in views/carpart folder and display it to my table on my webpage.
 
 
 // connecting to database
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true, })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true, }) // i am making a connection to the database using 
+// my environment variable which is saved in my gitpod. And successfully establishing connection to my database.
+
 const dbc = mongoose.connection
 
-dbc.once('open', () => console.log('Connected to Database!'))
-dbc.on('error', (error) => console.error(error))
+dbc.once('open', () => console.log('Connected to Database!'))// checking if my database connection is open and if open printing out a message in the console.
+// that the server is connected to database. 
+dbc.on('error', (error) => console.error(error))// checking if there is an error in the connection and printing the error in my console.
 
 
 
-app.use('/carparts', partRouter)
+app.use('/carparts', partRouter) // 
 
 //app.listen(5000, () => console.log('Server Started'))
 
-app.listen(port, function(error){
-    console.log('Server Started on port: ' + port);
+app.listen(port, function(error){ // Listening to the server on the avaliable port either 5000 or avaliable one. Also show error if their is any.
+    console.log('Server Started on port: ' + port);// Server Running Console Message
 });
