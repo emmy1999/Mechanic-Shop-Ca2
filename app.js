@@ -19,7 +19,7 @@ app.set('view engine', 'ejs')  // pulling up my static webpage
 
 app.use(express.urlencoded({ extended: false})) // this is a middlewear function which comes with the express package.
 // it enable us to use URL-encoded data with the querystring library.
-app.use(methodOverride('_method'))// using the method in the app. 
+app.use(methodOverride('_omethod'))// using the method in the app. 
 app.use(express.static('views/carpart')) // making my folder public to access my css and javascript for my html page.
 
 
