@@ -28,7 +28,7 @@ Also defining the allowed length of data to be 20. So if a user type more than 2
   <label for="Part">Part Name </label>
   <!-- also the value is set in the form when user click on edit document button option on every record.
 Which help the user to see the previous value and update whatever is required.       -->
-  <input  required value="<%= part.Part %>" type="text" pattern="[A-z0-9À-ž\s]+" name="Part" id="Part"  maxlength="20"  class="form-control">
+  <input  required value="<%= part.Part %>" type="text" pattern="[A-z0-9À-ž\s]+" name="Part" id="Part"  maxlength="25"  class="form-control">
 </div>
  <!--   setting the price input field as required so the user cant skip the field. Also checking the user input is a number by defining the type. And step is used to get decimal number from user.
 if a user enter anything other than alphabet and numbers an error is show.
